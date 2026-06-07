@@ -15,7 +15,7 @@ local function handleCommand(msg)
 		return
 	end
 
-	local wsValue = string.match(msg, "^/walkspeed%s+(%d+)$")
+	local wsValue = string.match(msg, "^/walkspeed%s+([%d%.]+)$")
 	if wsValue then
 		humanoid.WalkSpeed = tonumber(wsValue)
 		return
