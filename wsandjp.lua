@@ -8,14 +8,27 @@ local function handleCommand(msg)
 	local humanoid = char:FindFirstChildOfClass("Humanoid")
 	if not humanoid then return end
 
-	local jpValue = string.match(msg, "^/jumppower%s+(%d+)$")
-	if jpValue then
+	local jumppowerValue = string.match(msg, "^/jumppower%s+(%d+)$")
+	if jumppowerValue then
+		humanoid.UseJumpPower = true
+		humanoid.JumpPower = tonumber(jumppowerValue)
+		return
+	end
+
+	local jpValue = string.match(msg, "^/jp%s+(%d+)$")
+	if jpValue 
 		humanoid.UseJumpPower = true
 		humanoid.JumpPower = tonumber(jpValue)
 		return
 	end
 
-	local wsValue = string.match(msg, "^/walkspeed%s+([%d%.]+)$")
+	local walkspeedValue = string.match(msg, "^/walkspeed%s+([%d%.]+)$")
+	if walkspeedValue then
+		humanoid.WalkSpeed = tonumber(walkspeedValue)
+		return
+	end
+
+	local wsValue = string.match(msg, "^/ws%s+([%d%.]+)$")
 	if wsValue then
 		humanoid.WalkSpeed = tonumber(wsValue)
 		return
