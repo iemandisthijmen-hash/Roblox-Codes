@@ -49,6 +49,19 @@ local function handleCommand(msg)
 		return
 	end
 
+	
+	local wspeedValue = string.match(msg, "^/wspeed%s+([%d%.]+)$")
+	if wspeed then
+		humanoid.WalkSpeed = tonumber(wspeedValue)
+		return
+	end
+
+	local walksValue = string.match(msg, "^/walks%s+([%d%.]+)$")
+	if walks then
+		humanoid.WalkSpeed = tonumber(walksValue)
+		return
+	end
+
 	if msg == "/reset" then
 		humanoid.JumpPower = 50
 		humanoid.WalkSpeed = 16
