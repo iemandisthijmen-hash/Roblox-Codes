@@ -22,6 +22,20 @@ local function handleCommand(msg)
 		return
 	end
 
+	local jpowerValue = string.match(msg, "^/jpower%s+(%d+)$")
+	if jpowerValue
+		humanoid.UseJumpPower = true
+		humanoid.JumpPower = tonumber(jpowerValue)
+		return
+	end
+
+	local jumppValue = string.match(msg, "^/jumpp%s+(%d+)$")
+	if jumppValue
+		humanoid.UseJumpPower = true
+		humanoid.JumpPower = tonumber(jumppValue)
+		return
+	end
+
 	local walkspeedValue = string.match(msg, "^/walkspeed%s+([%d%.]+)$")
 	if walkspeedValue then
 		humanoid.WalkSpeed = tonumber(walkspeedValue)
@@ -31,6 +45,18 @@ local function handleCommand(msg)
 	local wsValue = string.match(msg, "^/ws%s+([%d%.]+)$")
 	if wsValue then
 		humanoid.WalkSpeed = tonumber(wsValue)
+		return
+	end
+
+	local wspeedValue = string.match(msg, "^/wspeed%s+([%d%.]+)$")
+	if wspeed then
+		humanoid.WalkSpeed = tonumber(wspeedValue)
+		return
+	end
+
+	local walksValue = string.match(msg, "^/walks%s+([%d%.]+)$")
+	if walks then
+		humanoid.WalkSpeed = tonumber(walksValue)
 		return
 	end
 
